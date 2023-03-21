@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - "8000:8000"
+  gradio:
+    build:
+      context: ./gradio
+    ports:
+      - "7860:7860"
+    depends_on:
+      - api
